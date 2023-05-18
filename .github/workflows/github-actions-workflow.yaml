@@ -1,9 +1,10 @@
-name: Github Actions Demo
+name: GitHub Actions Demo
 on: push
 jobs:
   Example-Actions-Job:
     name: Exploring GitHub Actions
     runs-on: windows-latest
+    steps:
       # Display the event that triggered the workflow
       - run: echo "The job was triggered by a ${{ github.event_name }} event."
       
@@ -34,7 +35,7 @@ jobs:
       - name: Setup dotnet on runner
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '6.x'
+          dotnet-version: '3.x'
       
       - name: Display dotnet version
         run: dotnet --version
